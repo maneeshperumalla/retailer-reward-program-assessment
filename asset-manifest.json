@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/..maneeshperumalla.github.io/retailer-reward-program-assessment/static/css/main.62d7e3c6.css",
+    "main.js": "/..maneeshperumalla.github.io/retailer-reward-program-assessment/static/js/main.794f79fa.js",
+    "static/js/787.d84438cf.chunk.js": "/..maneeshperumalla.github.io/retailer-reward-program-assessment/static/js/787.d84438cf.chunk.js",
+    "index.html": "/..maneeshperumalla.github.io/retailer-reward-program-assessment/index.html",
+    "main.62d7e3c6.css.map": "/..maneeshperumalla.github.io/retailer-reward-program-assessment/static/css/main.62d7e3c6.css.map",
+    "main.794f79fa.js.map": "/..maneeshperumalla.github.io/retailer-reward-program-assessment/static/js/main.794f79fa.js.map",
+    "787.d84438cf.chunk.js.map": "/..maneeshperumalla.github.io/retailer-reward-program-assessment/static/js/787.d84438cf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62d7e3c6.css",
+    "static/js/main.794f79fa.js"
+  ]
+}
