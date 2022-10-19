@@ -3,6 +3,7 @@ export const DOUBLE_REWARDS_POINTS = 2;
 export const SINGLE_REWARDS_AMOUNT = 50;
 export const SINGLE_REWARDS_POINTS = 1;
 export const LAST_3_MONTHS = 3;
+export const getCustomersApiUrl = 'http://localhost:8000/getAllTransactions'
 
 export const options = [
   {

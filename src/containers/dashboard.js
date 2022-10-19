@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './dashboard.css';
 import getCustomersList from '../services/getCustomersApi';
 import Table from '../components/table/table';
-import { ParentHeaders, config } from '../services/constants';
+import { ParentHeaders, config, getCustomersApiUrl } from '../services/constants';
 import combineTransactionsByCustomer from '../utils/filterTransactions';
 import calculateRewards from '../utils/calculateRewards';
 

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render dashboard container should render container and match shanpshot 1`] = `
+<div
+  className="container"
+>
+  <header
+    className="container-header"
+  >
+    Retailer Dashboard
+  </header>
+  <div
+    className="container-body"
+  >
+    <div
+      className="table-container"
+    >
+      <table>
+        <thead
+          className="header-thead"
+        >
+          <tr
+            className="header-tr"
+          >
+            <td>
+              Customer ID
+            </td>
+            <td>
+              Name
+            </td>
+            <td>
+              Total Orders
+            </td>
+            <td>
+              Total Amount
+            </td>
+            <td>
+              Total Rewards
+            </td>
+            <td>
+              Action
+            </td>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </div>
+</div>
+`;
