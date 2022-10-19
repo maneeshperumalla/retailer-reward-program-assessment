@@ -1,31 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from '../modal/modal';
 import './table.css';
-import combineTransactionsByCustomer from '../../utils/filterTransactions';
 
-const ParentTable = ({ headers, tableData, expndableData }) => {
-  const [isExpand, setIsExpand] = useState(false);
-  const [customerTrans, setCustomerTrans] = useState([]);
-  const [customerName, setCustomerName] = useState('');
-
-  const showAllTransactions = (id, name) => {
-    const filterById = expndableData.filter((x) => x.id === id);
-    const filteredList = combineTransactionsByCustomer(filterById, 'month');
-    setCustomerTrans(filteredList);
-    setIsExpand(true);
-    setCustomerName(name);
-  };
-
-  const close = () => setIsExpand(false);
-
+const Table = ({ tableData, tableConfig, customerTrans, customerName, isExpand, close }) => {
   return (
     <>
       <div className='table-container'>
         <table>
-          <thead>
-            <tr>
-              {headers.map((header, key) => {
-                return <th key={key}>{header}</th>;
+          <thead className='header-thead'>
+            <tr className='header-tr'>
+              {tableConfig.map((header, key) => {
+                return <td key={key}>{header.headerName}</td>;
               })}
             </tr>
           </thead>
@@ -33,21 +18,12 @@ const ParentTable = ({ headers, tableData, expndableData }) => {
             {tableData.map((value, key) => {
               return (
                 <>
-                  <tr key={key}>
-                    <td>{value.id}</td>
-                    <td>{value.name}</td>
-                    <td>{value.totalTransactions}</td>
-                    <td>{value.cost}</td>
-                    <td>{value.totalRewards}</td>
-                    <td>
-                      <button
-                        onClick={() =>
-                          showAllTransactions(value.id, value.name)
-                        }
-                      >
-                        View All
-                      </button>
-                    </td>
+                  <tr className='body-tr' key={key}>
+                    {tableConfig.map((body, key) => {
+                      return (<td className='body-td' key={key}>{body.isActionable
+                        ? <button className='body-action' onClick={() => body.onClick(value[body.getId], value[body.getName])}>{body.buttonName}</button>
+                        : <span>{value[body.key]}</span>}</td>);
+                    })}
                   </tr>
                 </>
               );
@@ -62,4 +38,4 @@ const ParentTable = ({ headers, tableData, expndableData }) => {
   );
 };
 
-export default ParentTable;
+export default Table;
