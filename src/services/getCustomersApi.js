@@ -1,10 +1,14 @@
+import { toast } from 'react-toastify';
+
 const getCustomersList = async () => {
-  try {
-    const api = await fetch('http://localhost:8000/getAllTransactions');
-    const response = await api.json();
-    return response;
-  } catch (error) {
-    return null;
+  /* axios is a better alternative for fetch to manage error handling */
+  const response = await fetch('http://localhost:8000/getAllTransactionvs');
+  if (response.ok) {
+    toast.success('Succesfully loaded customers data');
+    return response.json();
+  } else {
+    toast.error('Error loading customers data');
+    return Promise.reject(response);
   }
 };
 

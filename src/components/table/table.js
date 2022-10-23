@@ -15,7 +15,7 @@ const Table = ({ tableData, tableConfig, customerTrans, customerName, isExpand, 
             </tr>
           </thead>
           <tbody>
-            {tableData.map((value, key) => {
+            {tableData && tableData.map((value, key) => {
               return (
                 <>
                   <tr className='body-tr' key={key}>
@@ -30,6 +30,7 @@ const Table = ({ tableData, tableConfig, customerTrans, customerName, isExpand, 
             })}
           </tbody>
         </table>
+        { tableData.length > 0 ? null : <p className='no-records'>No records found</p>}
       </div>
       {isExpand && (
         <Modal onCloseModal={close} data={customerTrans} name={customerName} />
